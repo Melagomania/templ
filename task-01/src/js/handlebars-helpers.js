@@ -8,9 +8,7 @@ Handlebars.registerHelper('getWorkDays',  function(hireDate) {
   return workingDays;
 });
 
-Handlebars.registerHelper('getFormatedAdress', function(adress) {
-  var result = '';
-  var arr = adress.split(',');
-  result = arr[2].trim() + ', ' + arr[3].trim() + ', ' + arr[4].trim() + ', ' + arr[6].trim() ;
-  return result;
+Handlebars.registerHelper('getFormatedaddress', function(address) {
+  var arr = address.split(',');
+  return arr[2].trim() + ', ' + arr[3].trim() + ', ' + arr[4].trim() + ', ' + arr[6].trim() ;
 });
