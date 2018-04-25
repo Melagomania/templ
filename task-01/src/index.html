@@ -17,30 +17,155 @@
 </head>
 
 <body>
-  <header>
-  <div class="uui-header">
-    <nav>
-      <a href="#" class="brand-logo">
-        <span class="logo">
-          <img src="/images/Logo_Epam_White.svg" alt="" />
-        </span>
-        <span class="logo">
-          <img src="/images/ic_logo_UUi.svg" alt="" />
-        </span>
-        Unified UI
-      </a>
-    </nav>
+  <div class="wrapper">
+    <header>
+    </header>
+    <div class="popup-container"></div>
+    <div class="uui-main-container">
+      <main class="profile-items"></main>
+    </div>
   </div>
-  </header>
 
-  <script id="entry-template" type="text/x-handlebars-template">
-    <div class="entry">
-      <h1>{{title}}</h1>
-      <div class="body">
-        {{body}}
+  <script id="header-template" type="text/x-handlebars-template">
+      <div class="uui-header navigation-header">
+        <nav>
+          <a href="#" class="brand-logo">
+            <span class="logo">
+              <img src="/images/Logo_Epam_White.svg" alt="" />
+            </span>
+          </a>
+          <a href="#" class="brand-logo">
+            <span class="logo">
+              <img src="/images/ic_logo_UUi.svg" alt="" />
+            </span>
+            Unified UI
+          </a>
+          <ul class="uui-navigation nav navbar-nav">
+            {{#each this}}
+            <li>
+              <a href="{{href}}">{{text}}</a>
+            </li>
+            {{/each}}
+          </ul>
+        </nav>
       </div>
-      <div class="class asd">
-        {{migga}}
+  </script>
+
+  <script id="profile-card-template" type="text/x-handlebars-template">
+    {{#each this}}
+    <div class="uui-person-vertical-profile">
+      <div class="person-profile-body">
+        <h3>Profile card</h3>
+        <div class="person-profile-section">
+          <div class="person-profile-photo">
+            <img src="{{photoUrl}}" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="person-profile-footer">
+        <div class="person-profile-section">
+          <div class="person-profile-info">
+            <h2>{{firstName}} {{lastName}}</h2>
+            <p>{{title}}</p>
+          </div>
+        </div>
+        <button data-id="{{employeeId}}" type="button" class="uui-button lime-green show-popup-btn" data-toggle="modal" data-target="#popup1">Get info</button>
+      </div>
+    </div>
+    {{/each}}
+  </script>
+
+  <script id="popup-template" type="text/x-handlebars-template">
+    <div class="modal uui-modal fade" id="popup1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Tittle</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="uui-person-horizontal-profile white">
+              <div class="person-profile-body">
+                <div class="person-profile-section">
+                  <div class="person-profile-photo">
+                    <img src="{{photoUrl}}" alt="" />
+                  </div>
+                  <div class="person-profile-info">
+                    <h2>{{firstName}} {{lastName}}</h2>
+                    <a href="mailto:name@email.com" class="email-link">
+                      <i class="fa fa-envelope-o"></i>{{email}}</a>
+                    <br>
+                    <span class="modal-job-title">{{title}}</span>
+                    <br>
+                    <span class="modal-adress">
+                      <i class="fa fa-map-marker"></i>{{getFormatedAdress location}}, {{unit.name}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="person-profile-statistics">
+
+                <section class="uui-info-panel-vertical blue">
+                  <div class="info-panel-body">
+                    <div class="info-panel-section">
+                      <i class="fa fa-home"></i>
+                      <span class="info-panel-title">Unit name</span>
+                    </div>
+                  </div>
+                  <div class="info-panel-footer">
+                    <div class="info-panel-section">
+                      <span class="info-panel-footer-info">{{unit.name}}</span>
+                    </div>
+                  </div>
+                </section>
+                <section class="uui-info-panel-vertical dark-gray">
+                  <div class="info-panel-body">
+                    <div class="info-panel-section">
+                      <i class="fa fa-star"></i>
+                      <span class="info-panel-title">Primary skill</span>
+                    </div>
+                  </div>
+                  <div class="info-panel-footer">
+                    <div class="info-panel-section">
+                      <span class="info-panel-footer-info">{{primarySkill.name}}</span>
+                    </div>
+                  </div>
+                </section>
+                <section class="uui-info-panel-vertical red">
+                  <div class="info-panel-body">
+                    <div class="info-panel-section">
+                      <i class="fa fa-graduation-cap"></i>
+                      <span class="info-panel-title">Head of unit</span>
+                    </div>
+                  </div>
+                  <div class="info-panel-footer">
+                    <div class="info-panel-section">
+                      <span class="info-panel-footer-info">{{manager.firstName}} {{manager.lastName}}</span>
+                    </div>
+                  </div>
+                </section>
+                <section class="uui-info-panel-vertical lime-green">
+                  <div class="info-panel-body">
+                    <div class="info-panel-section">
+                      <i class="fa fa-calendar"></i>
+                      <span class="info-panel-title">Work days</span>
+                    </div>
+                  </div>
+                  <div class="info-panel-footer">
+                    <div class="info-panel-section">
+                      <span class="info-panel-footer-info">{{getWorkingDate hireDate}}</span>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="uui-button lime-green" data-dismiss="modal" aria-hidden="true">Ok</button>
+          </div>
+        </div>
       </div>
     </div>
   </script>

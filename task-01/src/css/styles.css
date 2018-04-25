@@ -1,1 +1,173 @@
 /* Insert you task implementation here. */
+.profile-items {
+  margin: 0 auto;
+  max-width: 1366px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 90px 0;
+}
+
+.uui-person-vertical-profile {
+  margin: 0 20px 40px;
+  width: 300px;
+}
+
+.person-profile-body {
+  padding: 20px 0; 
+}
+
+.person-profile-section {
+  display: block !important;
+}
+
+.person-profile-footer {
+  position: relative;
+  padding: 40px 0  60px !important;
+}
+
+h3 {
+  display: block;
+  text-align: center;
+  color: #fff;
+}
+
+.uui-button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+}
+
+.uui-person-vertical-profile:hover .uui-button {
+  display: block;
+}
+
+.uui-person-vertical-profile:hover .person-profile-body {
+  background-color: #39C2D7;
+}
+
+.modal-header {
+  background-color: #999999 !important;
+  text-align: center;
+}
+
+.modal-title {
+  color: #fff;
+}
+
+.modal-body .uui-person-horizontal-profile {
+  border: none;
+}
+
+.email-link {
+  text-transform: lowercase;
+  color: #39C2D7;
+  display: inline-block;
+  font-size: 15px;  
+  margin-bottom: 6px;  
+}
+
+.modal-job-title {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-family: 'Source Sans Pro Regular',Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  color: #A3C644;
+}
+
+.modal-adress {
+  display: inlibe-block;  
+  color: #464547;
+  font-family: 'Source Sans Pro Regular',Arial,sans-serif;
+  font-size: 15px;  
+}
+
+.modal h2 {
+  color: #39C2D7;
+  margin-bottom: 6px !important;  
+}
+
+.person-profile-statistics {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.uui-info-panel-vertical {
+  width: 120px;
+}
+
+.info-panel-section {
+  display: block !important;
+  padding: 12px 3px !important;
+  text-align: center;
+}
+
+.info-panel-section i {
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  font-size: 35px; 
+}
+
+.info-panel-title {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.info-panel-footer {
+  text-align: center;
+  display: block !important;
+  padding: 15px 0 25px;
+  min-height: 105px !important;
+  background: #fff !important;
+  text-align: center;
+}
+
+.uui-info-panel-vertical.blue .info-panel-footer{
+  border: 1px solid #39C2D7;
+}
+
+.uui-info-panel-vertical.dark-gray .info-panel-footer{
+  border: 1px solid #333333;
+}
+
+.uui-info-panel-vertical.red .info-panel-footer{
+  border: 1px solid #CB2323;
+}
+
+.uui-info-panel-vertical.lime-green .info-panel-footer{
+  border: 1px solid #A3C644;
+}
+
+.info-panel-footer-info {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #333333;
+}
+
+.modal-footer {
+  padding-bottom: 70px;
+}
+
+.modal .uui-button {
+  display: block;
+  /* position: static; */
+  /* margin-left: 0 !important; */
+}
+
+.modal-content {
+  position: relative;
+  padding-bottom: 50px;
+  right: 25px;
+}
+
+.popup-container {
+  height: 0;
+  width: 100%;
+}
