@@ -18,11 +18,10 @@
 
 <body>
   <div class="wrapper">
-    <header>
-    </header>
-    <div class="popup-container"></div>
+    <header id="header"></header>
+    <div id="popup-container"></div>
     <div class="uui-main-container">
-      <main class="profile-items"></main>
+      <main id="profile-items"></main>
     </div>
   </div>
 
@@ -90,6 +89,7 @@
             <div class="uui-person-horizontal-profile white">
               <div class="person-profile-body">
                 <div class="person-profile-section">
+                  <a class="employee-upsa-link" href="https://upsa.epam.com/workload/employeeView.do?employeeId={{employeeId}}"><i class="fa fa-child"></i></a>            
                   <div class="person-profile-photo">
                     <img src="{{photoUrl}}" alt="" />
                   </div>
@@ -155,7 +155,7 @@
                   </div>
                   <div class="info-panel-footer">
                     <div class="info-panel-section">
-                      <span class="info-panel-footer-info">{{getWorkingDate hireDate}}</span>
+                      <span class="info-panel-footer-info">{{getWorkDays hireDate}}</span>
                     </div>
                   </div>
                 </section>

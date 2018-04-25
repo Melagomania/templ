@@ -1,20 +1,30 @@
 /* Insert you task implementation here. */
-.profile-items {
+#profile-items {
   margin: 0 auto;
   max-width: 1366px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 90px 0;
+  justify-content: space-between;
+  padding: 90px 30px;
 }
 
 .uui-person-vertical-profile {
   margin: 0 20px 40px;
-  width: 300px;
+  width: 250px;
 }
 
 .person-profile-body {
   padding: 20px 0; 
+}
+
+.employee-upsa-link {
+  font-size: 40px;
+  float: right;
+  color: #ecc134;
+}
+
+.employee-upsa-link:hover {
+  color: #ecc134;  
 }
 
 .person-profile-section {
