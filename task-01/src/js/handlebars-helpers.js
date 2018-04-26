@@ -12,3 +12,8 @@ Handlebars.registerHelper('getFormatedaddress', function(address) {
   var arr = address.split(',');
   return arr[2].trim() + ', ' + arr[3].trim() + ', ' + arr[4].trim() + ', ' + arr[6].trim() ;
 });
+
+Handlebars.registerPartial(
+  'employeeUpsaLink',
+  '<a class="employee-upsa-link" href="https://upsa.epam.com/workload/employeeView.do?employeeId={{employeeId}}"><i class="fa fa-child"></i></a>'
+);

@@ -79,7 +79,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Modal Tittle</h4>
+            <h4 class="modal-title">{{firstName}} {{lastName}} profile</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
               <span></span>
               <span></span>
@@ -89,7 +89,7 @@
             <div class="uui-person-horizontal-profile white">
               <div class="person-profile-body">
                 <div class="person-profile-section">
-                  <a class="employee-upsa-link" href="https://upsa.epam.com/workload/employeeView.do?employeeId={{employeeId}}"><i class="fa fa-child"></i></a>            
+                  {{> employeeUpsaLink}}         
                   <div class="person-profile-photo">
                     <img src="{{photoUrl}}" alt="" />
                   </div>
